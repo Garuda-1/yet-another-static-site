@@ -1,0 +1,518 @@
+/**
+ * Template settings
+ */
+
+/** Overall layout. */
+html {
+    overflow-y: hidden;
+    height: 100%;
+}
+
+body {
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#template-header, #template-menu {
+    flex: 0 0 auto;
+}
+
+#template-main {
+    flex: 1 1 auto;;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#template-title {
+    padding: 0 1ex 0 1ex;
+}
+
+/** Menu style. */
+
+#template-menu {
+    background-color: #f9f9f0;
+    text-align: center;
+    border-style: solid;
+    border-color: #325a9a;
+    border-width: 0.15ex 0 0.15ex 0;
+    padding: 0.15ex 0;
+}
+
+#template-menu * {
+    display: inline-block;
+}
+
+#template-menu a {
+    color: #325a9a;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 0.5em;
+}
+
+#template-menu a:hover {
+    color: #f9f9f0;
+    background-color: #325a9a;
+}
+
+/** Errors and success. */
+
+.template-error, #template-success {
+    border-radius: 1ex;
+    margin: 1ex;
+    padding: 1ex;
+    width: fit-content;
+}
+
+.template-error   { background-color: lightcoral; }
+#template-success { background-color: lightgreen; }
+
+/** Padded. */
+.template-padded {
+    padding: 1ex;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/** Common settings. */
+
+p {
+    text-align: justify;
+}
+
+.head {
+    text-align: center;
+}
+
+img.head {
+    display: block;
+    margin: auto auto;
+}
+
+.guide {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.locale {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.w100 { width: 100%; }
+.w-fit { width: fit-content; }
+
+.pre {
+    white-space: pre-wrap;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Headers */
+
+h1, h2, h3, h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+    color: #325A9A;
+    margin: 0.5em 0 0.1em 0;
+}
+
+h1:empty, h2:empty, h3:empty, h4:empty {
+    display: none;
+}
+
+h1 { font-size: x-large; }
+h2 { font-size: large; }
+h3 { font-size: medium; }
+h4 { font-size: medium; font-weight: normal; }
+
+/* Links style  */
+
+a {
+    color: #325A9A;
+}
+
+a:hover {
+    background-color: #E2EAFA;
+}
+
+img {
+    border: none;
+}
+
+/* Information table */
+
+table.list,
+table.properties {
+    border-collapse: collapse;
+    margin: 1ex 0;
+    border: none;
+    border-collapse: collapse;
+}
+
+table.list td,
+table.properties td {
+    vertical-align: top;
+}
+
+table.properties > * > tr > td, table.properties > * > tr > th {
+    padding-right: 1ex;
+}
+
+/* Not needed once text-align: start is fully supported for TH elements */
+[dir="ltr"] .properties th { text-align: left; }
+[dir="rtl"] .properties th { text-align: right; }
+
+.key {
+    font-weight: bold;
+    vertical-align: top;
+    white-space: pre;
+}
+
+.value {
+    vertical-align: top;
+}
+
+table.properties input[type='text'],
+table.properties select {
+    width: 100%;
+    height: 3ex;
+    box-sizing: border-box;
+}
+
+/** List tables */
+
+table.list thead {
+    border-bottom: solid 0.5ex lightsteelblue;
+}
+
+table.list > * > tr > td {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    border: solid 0.15ex lightsteelblue;
+}
+
+table.list th {
+    padding: 0;
+    border: solid 0.15ex lightsteelblue;
+}
+
+.list tr[onclick]:hover > td {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/** Properties tables */
+
+/*table.properties {*/
+    /*width: 100%;*/
+/*}*/
+
+/*table.properties td:last-child {*/
+    /*width: 100%;*/
+/*}*/
+
+table.properties th {
+    vertical-align: top;
+    text-align: start;
+}
+
+table.properties th,
+table.properties td {
+    border: none;
+}
+
+table.properties input[type = 'submit'] {
+    margin-right: 0.2em;
+}
+
+table.properties textarea {
+    font-family: inherit;
+}
+
+/**
+ * Common properties.
+ */
+.hidden {
+    display: none;
+}
+
+/** Navigation and actions. */
+
+.action {
+    margin-right: 0.2em;
+}
+
+.navigation {
+    margin: 0.5ex 0;
+}
+
+.navigation > * {
+    margin-right: 1em;
+    display: inline-block;
+    height: 2.8ex;
+}
+
+.navigation > * > label {
+    margin-right: 0.2em;
+    border: none;
+}
+
+.navigation > * > img {
+    margin-left: 0.2em;
+    height: fit-content;
+    border: none;
+}
+
+.navigation > * > * {
+    padding: 0;
+    height: 100%;
+/*    display: inline-block;*/
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.navigation > .pager > a,
+.navigation > .pager > span,
+.navigation > .pager > input {
+    border: solid 0.15ex lightsteelblue;
+}
+
+
+.navigation > .pager > a,
+.navigation > .pager > span {
+    text-align: center;
+    text-decoration: none;
+    width: 2em;
+}
+
+.navigation > .pager > input {
+    margin: 0 0 0 0.2em;
+    text-align: end;
+}
+
+.navigation > .pager > span {
+    color: lightgray;
+}
+
+/** Refresher. */
+form.refresher.frozen {
+    background-color: rgba(0, 0, 255, 0.10);
+}
+
+/** Debug. */
+table {
+    border: solid 2ex red;
+}
+
+/** Select column in tables. */
+td.select,
+th.select {
+    width: 3em;
+    max-width: 3em;
+}
+td.select > label,
+th.select > label {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+tr.selected > td {
+    background: repeating-linear-gradient(
+            -45deg,
+            rgba(0, 0, 255, 0.0),
+            rgba(0, 0, 255, 0.0) 0.5em,
+            rgba(0, 0, 255, 0.15) 0.5em,
+            rgba(0, 0, 255, 0.15) 1em
+    );
+}
+
+/** Filters. */
+
+table.list .filter {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    height: 3ex;
+    border-style: solid;
+    border-color: lightsteelblue;
+    border-width: 0.15ex 0 0 0;
+}
+
+table.list .filter.active {
+    background: #d8ffd8;
+}
+
+/** Two-column info. */
+div.two-column {
+    display: flex;
+    flex-direction: row;
+}
+
+div.two-column > *:first-child { flex: 1 1 auto; }
+div.two-column >  *:last-child { flex: 1 1 auto; }
+
+table.two-column > tbody > tr > td {
+    vertical-align: top;
+    width: 50%;
+    max-width: 50%;
+}
+
+table.two-column {
+    width: 100%;
+    border: none;
+}
+
+
+
+table.standings {
+    border: none;
+    border-collapse: collapse;
+}
+
+
+/** Questions */
+textarea.questions {
+    min-width: 50vw;
+}
+
+/* Messages coloring */
+
+.msg-ac { color: green; }
+.msg    { color: black; }
+.msg-rj { color: darkred; }
+
+.messages .msg {
+    white-space: pre-wrap;
+}
+
+/* Action coloring */
+
+.forbidden { color: darkred; }
+.allowed   { color: darkgreen; }
+
+/* Highlighter settings */
+
+.syntaxhighlighter {
+    max-width: 97vw !important;
+    max-height: 60vh !important;
+    border: solid 0.15ex lightsteelblue;
+}
+
+/** Clock coloring */
+.clock { white-space: nowrap; }
+.clock-RUNNING      { color: darkgreen;     }
+.clock-PAUSED       { color: darkgoldenrod; }
+.clock-BEFORE       { color: darkslateblue; }
+.clock-AFTER        { color: darkred;       }
+.clock-COUNTDOWN    { color: darkred;       }
+
+/** Translation coloring. */
+
+.translate input.not-translated { background: #fffdd8; }
+.translate input.translated     { background: #d8ffd8; }
+
+/** Probes page. */
+#submit-probe\:grid,
+.probes {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.probes .no,
+.probes .time,
+.probes .memory {
+    text-align: end;
+}
+
+.probes .comment {
+    white-space: pre-wrap;
+}
+
+
+.standings h2, .standings p {
+    text-align: center;
+}
+
+table.standings {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-family: serif;
+    max-width: 98vw;
+}
+
+.standings > thead { border-bottom: solid 0.15ex silver; }
+.standings > tfoot { border-top:    solid 0.15ex silver; }
+
+.standings td,
+.standings th {
+    vertical-align: middle;
+    padding-right: 0.5ex;
+    padding-left: 0.5ex;
+}
+
+.standings th {
+    background-color: #F9F9F0;
+}
+
+.standings .party {
+    text-align: start;
+    min-width: 10em;
+}
+
+.standings .id {
+    text-align: start;
+    min-width: 2em;
+}
+
+.standings .problem,
+.standings .solved,
+.standings .rank,
+.standings .penalty {
+    text-align: center;
+    width: 2em;
+}
+
+.standings .statistics {
+    text-align: right;
+    padding-right: 2ex;
+}
+
+.standings .first { background: #c0ffc0 }
+.standings .ok { color: green; }
+.standings .rj { color: #c06060; }
+.standings .pd { color: #4040ff; }
+.standings .part { color: #406090; }
+.standings .zero { color: #c06060; }
+
+.standings td.problem > div {
+    font-size: x-small;
+}
+
+.standings .other {
+    opacity: 0.4;
+}
+
+.standings .current { background-color: #ffc0ff; }
+.standings .row00 { background-color: #f8f8f8; }
+.standings .row01 { background-color: #ffffff; }
+.standings .row10 { background-color: #c8e8f8; }
+.standings .row11 { background-color: #d0f0ff; }
+
+.standings .stat {
+    text-align: center;
+}
